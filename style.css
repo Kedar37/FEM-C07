@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*, *::after, *::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 13px;
+    border: none;
+    background-color: hsl(210, 46%, 95%);
+
+    display: grid;
+    place-content: center;
+}
+
+img{
+    width: 40px;
+    border-radius: 50px;
+}
+
+p{
+    color: white;
+    opacity: 50%;
+}
+
+h3, h2{
+    color: white;
+    font-weight: 600;
+}
+
+.black, .black-para{
+    color: hsl(219, 29%, 14%);
+}
+
+.black-para{
+    opacity: 70%;
+}
+
+.container{
+    width: min(95%, 70rem);
+    padding-block: 2rem;
+    margin-inline: auto;
+}
+
+.blog-cards{
+    display: grid;
+    grid-gap: 1.5rem;
+    grid-auto-columns: 1fr;
+
+    grid-template-areas: 
+    "one"
+    "two"
+    "three"
+    "four"
+    "five";
+}
+
+.blog-card{
+    border-radius: 0.7rem;
+    padding: 1.5rem;
+    box-shadow: 50px 50px 25px -20px rgba(207, 207, 207, 0.3);
+}
+
+.blog-header{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.blog-title{
+    margin: 1rem 0;
+}
+
+.card-one{
+    background-image: url(/images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-color: hsl(263, 55%, 52%);
+    background-position: top right 10%;
+
+    grid-area: one;
+}
+
+.card-two{
+    background-color: hsl(217, 19%, 35%);
+    grid-area: two;
+}
+
+.card-three{
+    background-color: white;
+    grid-area: three;
+}
+
+.card-four{
+    background-color: hsl(219, 29%, 14%);
+    grid-area: four;
+}
+
+.card-five{
+    background-color: white;
+    grid-area: five;
+}
+
+@media (min-width: 33em) {
+
+    .container{
+        margin: 10vh auto;
+    }
+
+    .blog-cards{
+        grid-template-areas: 
+        "one one two"
+        "three four four"
+        "five five five"
+    }
+}
+
+@media (min-width: 55em) {
+
+    .blog-cards{
+        grid-template-areas: 
+        "one one two five"
+        "three four four five"
+    }
+
+}
